@@ -318,9 +318,18 @@ int main() {
     
     // Ambil stasiun awal dan akhir
     string a,b;
+    cout << ("\n");
+    cout << ("<><><><><><><><><><><><><><><><><>\n");
+    cout << ("<>  SELAMAT DATANG PADA PROGRAM <>\n");
+    cout << ("<>          KRL TRANSIT         <>\n");
+    cout << ("<> 'teman perjalanan krl anda'  <>\n");
+    cout << ("<><><><><><><><><><><><><><><><><>\n");
+    cout << ("\n");
     cout << "Pencarian Rute KRL" << endl;
-    cout << "Stasiun Awal: "; getline(cin, a);         // Baca keseluruhan line karena ada nama stasiun yang ada spasi-nya
-    cout << "Stasiun Akhir: "; getline(cin, b);
+    cout << "Masukan Stasiun Asal Anda: "; getline(cin, a);         // Baca keseluruhan line karena ada nama stasiun yang ada spasi-nya
+    cout << "<><><><><><><><><><><><><><><><><>" << endl;
+    cout << "Masukan Stasiun Tujuan Anda: "; getline(cin, b);
+    cout << ("\n");
 
     // Cari rute terpendek dengan BFS
     Node st_awal = g.getNodeByName(a);
@@ -332,7 +341,7 @@ int main() {
     if (path.empty())
         cout << "Error! Tidak ada rute yang ditemukan antara dua stasiun tersebut!" << endl;
     else {
-        cout << "===RUTE PERJALANAN===" << endl;
+        cout << "==========RUTE PERJALANAN==========" << endl;
 
         Node node, nextNode;
         set<string> commonlines;
@@ -350,8 +359,12 @@ int main() {
 
             commonlines =  findCommonSubset(node.getLines(), nextNode.getLines());
             if (!hasCommonSubset(commonlines, prev_commonlines)) {
+                cout << "TRANSIT DI STASIUN: " << endl;          // print indikasi bahwa transit telah terjadi
+                cout << "    |" << endl; 
                 cout << node.getName() << endl;     // print nama stasiun transit
-                cout << "TRANSIT" << endl;          // print indikasi bahwa transit telah terjadi
+                cout << "    |" << endl; 
+                cout << "NAIK KEMBALI DARI STASIUN: " << endl;       
+
             }
             prev_commonlines = commonlines;
 
@@ -361,7 +374,7 @@ int main() {
 
         // Print stasiun terakhir
         cout << path[path.size()-1].getName() << endl;
-        cout << "TIBA DI TUJUAN." << endl;
+        cout << "========ANDA TIBA DI TUJUAN========" << endl;
     }
 
     return 0;

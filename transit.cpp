@@ -341,7 +341,7 @@ int main() {
     if (path.empty())
         cout << "Error! Tidak ada rute yang ditemukan antara dua stasiun tersebut!" << endl;
     else {
-        cout << "==========RUTE PERJALANAN==========" << endl;
+        cout << "==========RUTE PERJALANAN==========" << endl; 
 
         Node node, nextNode;
         set<string> commonlines;
@@ -359,11 +359,15 @@ int main() {
 
             commonlines =  findCommonSubset(node.getLines(), nextNode.getLines());
             if (!hasCommonSubset(commonlines, prev_commonlines)) {
-                cout << "TRANSIT DI STASIUN: " << endl;          // print indikasi bahwa transit telah terjadi
-                cout << "    |" << endl; 
-                cout << node.getName() << endl;     // print nama stasiun transit
-                cout << "    |" << endl; 
-                cout << "NAIK KEMBALI DARI STASIUN: " << endl;       
+                cout << "===================================" << endl; 
+                cout << "        TRANSIT DI STASIUN: " << endl;          // print indikasi bahwa transit telah terjadi
+                cout << "                |" << endl; 
+                cout << "============";
+                cout << node.getName();     // print nama stasiun transit
+                cout << "============" << endl;
+                cout << "                |" << endl; 
+                cout << "    NAIK KEMBALI DARI STASIUN: " << endl;   
+                cout << "===================================" << endl;    
 
             }
             prev_commonlines = commonlines;

@@ -4,7 +4,15 @@ Program ini dirancang untuk membantu pengguna menemukan rute terpendek antara du
 ## Fitur
 - **Pencarian Rute**: Program Transit memungkinkan pengguna untuk mencari rute perjalanan antara dua lokasi yang diinginkan. Pengguna dapat memasukkan lokasi asal dan tujuan, dan program akan mencari rute tercepat yang tersedia menggunakan transportasi umum.
 
+## Cara Menjalankan
+Setelah melakukan `git clone` pada repo ini, jalankan perintah berikut pada command line.
+```
+$ cd TransitSystem/
+$ g++ transit.cpp KRL_init.cpp -o transit
+$ ./transit
+```
+
 ## Tim Penyusun
 - Andra Dihat Putra
-- Faiz Fadhilah Prasetyo
+- Fais Fadilah Prasetyo
 - Muhamad Ghifar Azka Nurhadi
